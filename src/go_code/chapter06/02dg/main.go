@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	//test(4)
+	//basic(4)
 	test2(4)
 }
 
