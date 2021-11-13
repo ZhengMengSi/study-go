@@ -19,3 +19,9 @@ func appendInt(x []int, y int) []int {
 	z[len(x)] = y
 	return z
 }
+
+func mapAppendIsError() {
+	var m map[string]string{}
+	m["zms"] = "正确"
+	// m = append(m, map["a"][])
+}
