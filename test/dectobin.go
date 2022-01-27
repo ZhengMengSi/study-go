@@ -1,24 +1,23 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"strconv"
 )
 
-func main() {
-	decimal := 8
-	binary := ""
-
-	for ; decimal > 0; decimal /= 2 {
-		lsb := decimal % 2
-		binary = strconv.Itoa(lsb) + binary
-	}
-
-	//var a float64 = 0.1 + 0.2
-
-	fmt.Println(.1 + .2)
-	var a float64 = .1
-	var b float64 = .2
-	fmt.Println(a + b)
-	fmt.Printf("%.54f\n", .1+.2)
+type a struct {
+	Name string `json:"name"`
+	Name1 string `json:"name1"`
+	Age int `json:"age"`
 }
+
+func main() {
+	d := make([]a, 0)
+	str := `[{"name": "zhangsan","age": 2},{"name": "lisan","age": 3}]`
+	err := json.Unmarshal([]byte(str), &d)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(d)
+}
+
